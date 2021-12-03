@@ -35,35 +35,43 @@ First, the timestamp for a 0.90 quantile of ratings was found to keep ratings be
 Then, I trained the autoencoder with two different architectures. The first model, as shown in figure 1, take a users ratings to all available movies (the unrated movies are set to zero) and forwards them to a hidden layer with 400 neurons. This is the encoder part. The second part tries to recreate the inputs by turning the encoded ratings (values produced by the hidden layer) to the users original ratings, which is the decoder part. Figure 2 shows the autoencoder network with three hidden layer which works in the same way as the previous network.
 
 ![Figure 1. First Autoencoder Network](/autoencoder_400_network.png)
+
 Figure 1. Autoencoder with One Hidden Layer
 
 ![Figure 2. Second Autoencoder Network](/autoencoder_400_200_400_network.png)
+
 Figure 2. Autoencoder with Three Hidden Layers
 
 As can be seen from the results in figure 3, the second model does a better job, and has been chosen for the recommender system. Both models have been trained for 60 epochs (more epochs is better, but due to hardware constraints I could not train for more epochs or deeper networks). 70% of the users were chosen for training and the remaining 30% were used for testing.
 
 ![Figure 3. AutoEncoder Models Comparison](/ae_loss_comparison.png)
+
 Figure 3. AutoEncoder Models Comparison
 
 I first found the top 200 casts based on the number of a cast was mentioned in movies. Figures 4 to 6 shows genre and cast occurrences. Then I multi-hot encoded genres and casts. Because a movie can have multiple genres or casts, a multi-hot encoding approach was chosen instead of one-hot encoding.
 
 ![Figure 4. Genre Occurrence in Ratings](/genre_occurrence.png)
+
 Figure5. Genre Occurrence in Ratings
 
 ![Figure 5. Genre Occurrence in Movies](/movies_only_based_genre_occurrence.png)
+
 Figure 5. Genre Occurrence in Movies
 
 ![Figure 6. Cast Occurrence in Movies](/cast_occurrence.png)
+
 Figure 6. Cast Occurrence in Movies
 
 Then, using different values for K, I checked the sum of squared distances of samples to their closest cluster center to decide which value of K is better. Figure 7 shows that at around 50 the value of K is optimal and values greater than that, will not have a significantly lower value of sum of squared distances of samples to their closest cluster center.
 
 ![Figure 7. Different K Values for KMeans Clustering](/candidates_for_k_means_sum_of_squared_distances.png)
+
 Figure 7. Different K Values for KMeans Clustering
 
 Finally, I created three methods for recommendations, KMeans Clustering (Collaborative Filtering and Content Based Filtering), KD-Tree (Content Based Filtering), Autoencoder (Collaborative Filtering), and a Hybrid approach using Autoencoder and KD-Tree (Collaborative Filtering and Content Based Filtering). Figure 8 and table 1 show the results for these methods.
 
 ![Figure 8. Methods Comparison](/methods_comparison.png)
+
 Figure 8. Methods Comparison
 
 Table 1. Methods Comparison
