@@ -1,4 +1,4 @@
-# Movie Recommendation System Code
+# Movie Recommendation System Project Code
 
 > This repository contains the code for a Graduate Coursework Project (CP8305 - Knowledge Discovery) for Fall 2021.
 ## 1. Introduction snd Setup
