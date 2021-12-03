@@ -20,7 +20,7 @@ The order in which the files must be executed are:
 2. `train_autoencoder.py`: This file contains training of the AutoEncoder. The file can be edited to change the AutoEncoder network structure. Training the network may take hours since the dataset is huge and the network has lots of neurons. By the end of running this file, the final AutoEncoder network will be trained and saved for future use.
 3. `kmean_preprocessing.ipynb`: This file contains some preprocessing steps needed for creating the KMeans Clustering approach and finding a good candidate for K. Running this file takes hours since the dataset is huge and the KMeans Training is done multiple times. By the end of running this file, the final KMeans model will be trained and saved for future use.
 4. `kd_tree_preprocessing.ipynb` : This file contains some preprocessing steps needed for creating the KD-Tree approach. By the end of running this file, the final KD-Tree model will be trained and saved for future use. Also, all movie distances will be calculated and stored for faster use in the recommendation engine.
-5. `validation_approaches.ipynb`: This file contains the evaluations for all approaches.
+5. `validating_approaches.ipynb`: This file contains the evaluations for all approaches.
 
 ## 2. Dataset
 The Movie Dataset was used for this project. There are 26,000,000 ratings provided by 270,000 users for 45,000 movies in the dataset. The dataset also provides genre and cast information for each movie which was used in this project. The contents of the downloaded dataset must be placed inside the data directory.
