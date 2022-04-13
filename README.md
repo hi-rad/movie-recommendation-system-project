@@ -1,7 +1,7 @@
 # Movie Recommendation System Project Code
 
 > This repository contains the code for a Graduate Coursework Project (CP8305 - Knowledge Discovery) for Fall 2021.
-## 1. Introduction snd Setup
+## 1. Introduction and Setup
 The project is a Movie Recommendation System using multiple models.
 
 To run the project, a python 3.9 environment must be created and the following packages must be installed (either by using conda or pip):
